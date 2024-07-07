@@ -6,7 +6,7 @@
   "scripts": {
     "dev:build-client": "webpack --config webpack/webpack.client.js --watch",
     "dev:build-server": "webpack --config webpack/webpack.server.js --watch",
-    "build": "npm run build:client && npm run build:server",
+    "build": "npm run dev:build-client && npm run dev:build-server",
     "start": "node server.js",
     "dev": "npm-run-all --parallel dev:*",
     "dev:server": "nodemon --watch build --exec \"node dist/server-bundle.js\""
@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.24.7",
     "@vue/compiler-sfc": "^3.2.29",
     "babel-loader": "^8.0.4",
     "babel-preset-vue": "^2.0.2",

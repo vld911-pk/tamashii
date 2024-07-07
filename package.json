@@ -1,0 +1,34 @@
+{
+  "name": "mine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:build-client": "webpack --config webpack/webpack.client.js --watch",
+    "dev:build-server": "webpack --config webpack/webpack.server.js --watch",
+    "build": "npm run build:client && npm run build:server",
+    "start": "node server.js",
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:server": "nodemon --watch build --exec \"node dist/server-bundle.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.2.29",
+    "babel-loader": "^8.0.4",
+    "babel-preset-vue": "^2.0.2",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4",
+    "npm-run-all": "^4.1.1",
+    "vue": "^3.4.31",
+    "vue-loader": "^17.4.2",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0"
+  }
+}
